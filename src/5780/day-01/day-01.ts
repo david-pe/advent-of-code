@@ -2,7 +2,7 @@ export function solve(input: number) {
   return Math.floor(input / 3) - 2;
 }
 
-export function solve_a(input: number) {
+export function solve2(input: number) {
   const fuel = solve(input);
   return calcFuel(fuel);
 }
