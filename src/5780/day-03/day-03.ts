@@ -1,22 +1,12 @@
 export function solve(wire1: string[], wire2: string[]) {
   const [pathA, pathB] = [wire1, wire2].map(buildPath);
   const crossings = gatherCrossings(pathA, pathB);
-  return crossings.reduce((closest, current) => {
-    const currentDist = Math.abs(current.x) + Math.abs(current.y);
-    if (currentDist < closest) {
-      return currentDist;
-    }
-    return closest;
-  }, Number.MAX_SAFE_INTEGER);
+  return Math.min(...crossings.map(({ x, y }) => Math.abs(x) + Math.abs(y)));
 }
 
 export function solve2(wire1: string[], wire2: string[]) {
   const [pathA, pathB] = [wire1, wire2].map(buildPath);
-  const crossings = gatherCrossings(pathA, pathB).map(x => x.steps);
-  return crossings.reduce(
-    (closest, current) => Math.min(closest, current),
-    Number.MAX_SAFE_INTEGER,
-  );
+  return Math.min(...gatherCrossings(pathA, pathB).map(x => x.steps));
 }
 
 function gatherCrossings(
