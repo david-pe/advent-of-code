@@ -23,7 +23,7 @@ describe('Day 02', () => {
   });
 
   describe('Part 2', () => {
-    it('solves examples', () => {
+    it('solves the input', () => {
       expect(solve2(stringToNumbers(inputLoader('./input.txt')))).toBe(6255);
     });
   });
