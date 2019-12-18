@@ -51,5 +51,8 @@
   "yoshi": {
     "hmr": "auto"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "basad": "^1.0.3"
+  }
 }
