@@ -1,6 +1,6 @@
 import { solve, solve2 } from './day-04';
 
-describe('Day 03', () => {
+describe('Day 04', () => {
   describe('Part 1', () => {
     it('solves examples', () => {
       expect(solve({ min: 111111 })).toBe(1);
