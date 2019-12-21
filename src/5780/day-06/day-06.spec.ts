@@ -1,6 +1,6 @@
+import 'basad';
 import { solve, solve_2 } from './day-06';
 import inputLoader from '../../input-loader';
-import 'basad';
 
 const split = input => input.split('\n').map(x => x.trim());
 
@@ -48,7 +48,7 @@ describe('Day 06', () => {
 
     it('solves the input', () => {
       const input = split(inputLoader('./input_2.txt'));
-      expect(solve_2(input)).toEqual(0);
+      expect(solve_2(input)).toEqual(229);
     });
   });
 });
