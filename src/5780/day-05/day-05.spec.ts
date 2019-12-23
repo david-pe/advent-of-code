@@ -1,6 +1,6 @@
+import 'basad';
 import { solve } from './day-05';
 import inputLoader from '../../input-loader';
-import 'basad';
 
 const split = input => input.split(',').map(x => parseInt(x, 10));
 

@@ -42,6 +42,7 @@ export function* solve(
   inStream: () => IterableIterator<number>,
 ) {
   let i = 0;
+  const stream = inStream();
 
   const read = (index: number, mode: number) =>
     mode ? input[index] : input[input[index]];
@@ -63,7 +64,7 @@ export function* solve(
         i += size2;
         break;
       case 3:
-        input[input[i + 1]] = inStream().next().value;
+        input[input[i + 1]] = stream.next().value;
         i += 2;
         break;
       case 4:
