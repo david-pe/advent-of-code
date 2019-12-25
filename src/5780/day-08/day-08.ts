@@ -55,7 +55,7 @@ export function solve_2({
 
   for (let index = 0; index < layerSize; index++) {
     const pixel = layers.reduce(
-      (state, layer) => (state !== 2 ? state : layer[index]),
+      (color, layer) => (color !== 2 ? color : layer[index]),
       2,
     );
     image.push(pixel);
