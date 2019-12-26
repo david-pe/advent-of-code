@@ -7,7 +7,7 @@
     "program": "${workspaceFolder}/node_modules/yoshi/bin/yoshi-cli",
     "port": 9229,
     "args": [
-      "test", "--debug-brk", "-t", "Day 09"
+      "test", "--debug-brk", "-t", "Day 10"
     ]
   }]
 }
