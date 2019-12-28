@@ -1,4 +1,4 @@
-import { solve as computer } from '../day-05/day-05';
+import { computer } from '../computer';
 
 function getOutput(input: number[], setting: number) {
   const inputStream = function*() {
@@ -6,7 +6,7 @@ function getOutput(input: number[], setting: number) {
   };
 
   const output: number[] = [];
-  for (const x of computer([...input], inputStream, true)) {
+  for (const x of computer([...input], inputStream)) {
     output.push(x);
   }
   return output;

@@ -1,4 +1,4 @@
-import { solve as computer } from '../day-05/day-05';
+import { computer } from '../computer';
 
 function* permute(a: number[], n = a.length): IterableIterator<number[]> {
   if (n <= 1) {

@@ -1,4 +1,4 @@
-import 'basad';
+// import 'basad';
 import { solve, solve_2 } from './day-09';
 import inputLoader from '../../input-loader';
 
