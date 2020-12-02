@@ -5,7 +5,7 @@ object Day02 {
   def parseInput(input: Iterator[String]): Seq[(PasswordPolicy, String)] = {
     val regex = raw"(\d*)-(\d*) (.): (.*)".r
 
-    input.map(_.trim).map {
+    input.map {
       case regex(min, max, char, pwd) => PasswordPolicy(min, max, char) -> pwd
     }.toSeq
   }
@@ -25,9 +25,9 @@ object Day02 {
 
     input.count {
       case (PasswordPolicy(min, max, char), pwd) => {
-        val c1 = pwd.charAt(min - 1)
-        val c2 = pwd.charAt(max - 1)
-        (c1 == char || c2 == char) && !(c1 == char && c2 == char)
+        val pos1 = if (pwd.charAt(min - 1) == char) 1 else 0
+        val pos2 = if (pwd.charAt(max - 1) == char) 1 else 0
+        pos1 + pos2 == 1
       }
     }
   }

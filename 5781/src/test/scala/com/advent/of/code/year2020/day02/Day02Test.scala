@@ -1,6 +1,7 @@
 package com.advent.of.code.year2020.day02
 
 import com.advent.of.code.year2020.day02.Day02.{parseInput, solve1, solve2}
+import com.advent.of.code.year2020.utils.Utils._
 import org.specs2.matcher.Scope
 import org.specs2.mutable._
 
@@ -25,7 +26,7 @@ class Day02Test extends SpecificationWithJUnit {
             """
               |1-3 a: abcde
               |1-3 b: cdefg
-              |2-9 c: ccccccccc""".stripMargin.split('\n').map(_.trim).filterNot(_ == "").toIterator;
+              |2-9 c: ccccccccc""".cleanInput
 
           solve1(parseInput(input)) must_=== 2
         }
@@ -39,11 +40,12 @@ class Day02Test extends SpecificationWithJUnit {
     "Part Two" should {
       "Examples" should {
         "solve first" in {
+
           val input =
             """
               |1-3 a: abcde
               |1-3 b: cdefg
-              |2-9 c: ccccccccc""".stripMargin.split('\n').map(_.trim).filterNot(_ == "").toIterator;
+              |2-9 c: ccccccccc""".cleanInput
 
           solve2(parseInput(input)) must_=== 1
         }

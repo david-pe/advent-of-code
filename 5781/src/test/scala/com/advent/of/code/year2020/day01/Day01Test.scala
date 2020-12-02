@@ -1,6 +1,7 @@
 package com.advent.of.code.year2020.day01
 
 import com.advent.of.code.year2020.day01.Day01.{solve1, solve2}
+import com.advent.of.code.year2020.utils.Utils._
 import org.specs2.matcher.Scope
 import org.specs2.mutable._
 
@@ -28,7 +29,7 @@ class Day01Test extends SpecificationWithJUnit {
               |366
               |299
               |675
-              |1456""".stripMargin.split('\n').map(_.trim).filterNot(_ == "").map(_.toInt)
+              |1456""".cleanInput.map(_.toInt).toSeq
 
           solve1(input) must_=== 514579
         }
@@ -49,7 +50,7 @@ class Day01Test extends SpecificationWithJUnit {
               |366
               |299
               |675
-              |1456""".stripMargin.split('\n').map(_.trim).filterNot(_ == "").map(_.toInt)
+              |1456""".cleanInput.map(_.toInt).toSeq
 
           solve2(input) must_=== 241861950
         }
