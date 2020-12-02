@@ -25,9 +25,9 @@ object Day02 {
 
     input.count {
       case (PasswordPolicy(min, max, char), pwd) => {
-        val pos1 = if (pwd.charAt(min - 1) == char) 1 else 0
-        val pos2 = if (pwd.charAt(max - 1) == char) 1 else 0
-        pos1 + pos2 == 1
+        val pos1 = pwd.charAt(min - 1) == char
+        val pos2 = pwd.charAt(max - 1) == char
+        pos1 ^ pos2
       }
     }
   }
