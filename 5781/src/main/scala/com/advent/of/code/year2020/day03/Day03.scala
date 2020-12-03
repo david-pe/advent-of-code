@@ -23,6 +23,6 @@ object Day03 {
 
   private def didHitTree(row: String, colIndex: Int): Boolean = row.charAt(colIndex % row.length) == '#'
 
-  case class Slope(down: Int, right: Int)
+  case class Slope(right: Int, down: Int)
 
 }
