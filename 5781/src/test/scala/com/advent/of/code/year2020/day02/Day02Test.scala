@@ -21,7 +21,7 @@ class Day02Test extends SpecificationWithJUnit {
     "Part One" should {
       "Examples" should {
 
-        "solve first" in {
+        "solve first example" in {
           val input =
             """
               |1-3 a: abcde
@@ -39,7 +39,7 @@ class Day02Test extends SpecificationWithJUnit {
 
     "Part Two" should {
       "Examples" should {
-        "solve first" in {
+        "solve first example" in {
 
           val input =
             """
