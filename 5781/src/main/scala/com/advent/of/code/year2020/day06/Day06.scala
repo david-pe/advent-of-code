@@ -1,23 +1,15 @@
 package com.advent.of.code.year2020.day06
 
 object Day06 {
+  def solve1(input: String): Int = getGroups(input).map(questions).map(_.length).sum
 
-  def solve1(input: String): Int = {
-    val groups = getGroups(input)
-    groups.map(questions).map(_.length).sum
-  }
+  private def questions(input: String) = input.replaceAll("\\s+", "").distinct
 
-  def solve2(input: String): Int = {
-    val groups = getGroups(input)
-
-    groups.map { group =>
+  def solve2(input: String): Int =
+    getGroups(input).map(group => {
       val groupSize = group.split('\n').length
-      questions(group).count(question => groupSize == group.count(_ == question))
-    }.sum
-  }
+      group.groupBy(_.toChar).mapValues(_.length).values.count(_ == groupSize)
+    }).sum
 
-  def getGroups(input: String) = input.split("\n\n")
-
-  def questions(input: String) = input.replaceAll("\\s+", "").distinct
-
+  private def getGroups(input: String) = input.trim.split("\n\n")
 }
