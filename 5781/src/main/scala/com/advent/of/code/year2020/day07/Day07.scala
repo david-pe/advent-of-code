@@ -35,6 +35,7 @@ object Day07 {
     input.map(_.split("contain|,").toList)
       .map {
         case a :: b => stripKey(a) -> b.map(stripValue).toMap
+        case _ => throw new RuntimeException("bad input")
       }.toMap
 
   }
