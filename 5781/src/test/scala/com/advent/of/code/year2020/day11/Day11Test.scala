@@ -15,7 +15,7 @@ class Day11Test extends SpecificationWithJUnit {
     }
   }
 
-  "Day Ten" should {
+  "Day Eleven" should {
 
     "Part One" should {
       "Examples" should {
