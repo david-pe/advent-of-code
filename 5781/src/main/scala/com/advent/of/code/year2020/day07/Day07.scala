@@ -10,10 +10,10 @@ object Day07 {
 
     def containsShinyGold(bag: (String, Map[String, Int])): Boolean = bag match {
       case (_, contents) if contents.contains(shinyGold) => true
-      case (_, contents) => contents.exists({
+      case (_, contents) => contents.exists {
         case (`empty`, 0) => false
         case (name: String, _: Int) => containsShinyGold(name, bags(name))
-      })
+      }
     }
 
     bags.count(containsShinyGold)
@@ -28,13 +28,13 @@ object Day07 {
     }
 
     def stripValue(key: String) = key.trim match {
-      case valueRegex("no", stripped) => empty -> 0
+      case valueRegex("no", _) => empty -> 0
       case valueRegex(count, stripped) => stripped.trim -> count.toInt
     }
 
     input.map(_.split("contain|,").toList)
       .map {
-        case a :: b => stripKey(a) -> b.map(stripValue).toMap
+        case key :: value => stripKey(key) -> value.map(stripValue).toMap
         case _ => throw new RuntimeException("bad input")
       }.toMap
 
@@ -47,7 +47,7 @@ object Day07 {
       bags(bagName).foldLeft(0) { (total, subRule) =>
         total + (subRule match {
           case (`empty`, 0) => 0
-          case (name: String, count: Int) => count + count * countBags(name)
+          case (name, count) => count + count * countBags(name)
         })
       }
 
