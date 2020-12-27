@@ -6,10 +6,13 @@ object Day06 {
   private def questions(input: String) = input.replaceAll("\\s+", "").distinct
 
   def solve2(input: String): Int =
-    getGroups(input).map(group => {
+    getGroups(input).map { group =>
       val groupSize = group.split('\n').length
-      group.groupBy(_.toChar).mapValues(_.length).values.count(_ == groupSize)
-    }).sum
+      group.groupBy(c => c)
+        .mapValues(_.length)
+        .values
+        .count(_ == groupSize)
+    }.sum
 
   private def getGroups(input: String) = input.trim.split("\n\n")
 }

@@ -15,29 +15,31 @@ class Day06Test extends SpecificationWithJUnit {
     }
   }
 
+  trait ExampleContext extends Scope {
+    val exampleInput: String = """abc
+                                 |
+                                 |a
+                                 |b
+                                 |c
+                                 |
+                                 |ab
+                                 |ac
+                                 |
+                                 |a
+                                 |a
+                                 |a
+                                 |a
+                                 |
+                                 |b""".stripMargin
+  }
+
   "Day Six" should {
 
     "Part One" should {
       "Examples" should {
 
-        "solve first example" in {
-          val input = """abc
-                        |
-                        |a
-                        |b
-                        |c
-                        |
-                        |ab
-                        |ac
-                        |
-                        |a
-                        |a
-                        |a
-                        |a
-                        |
-                        |b""".stripMargin
-
-          solve1(input) must_=== 11
+        "solve first example" in new ExampleContext {
+          solve1(exampleInput) must_=== 11
         }
       }
 
@@ -49,24 +51,8 @@ class Day06Test extends SpecificationWithJUnit {
 
   "Part Two" should {
 
-    "solve first example" in {
-      val input = """abc
-                    |
-                    |a
-                    |b
-                    |c
-                    |
-                    |ab
-                    |ac
-                    |
-                    |a
-                    |a
-                    |a
-                    |a
-                    |
-                    |b""".stripMargin
-
-      solve2(input) must_=== 6
+    "solve first example" in new ExampleContext {
+      solve2(exampleInput) must_=== 6
     }
 
     "solve it" in new Context {
