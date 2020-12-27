@@ -22,8 +22,7 @@ class Day04Test extends SpecificationWithJUnit {
 
         "solve first example" in {
           val input =
-            """
-             ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
+            """ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
               |byr:1937 iyr:2017 cid:147 hgt:183cm
               |
               |iyr:2013 ecl:amb cid:350 eyr:2023 pid:028048884
@@ -85,7 +84,8 @@ class Day04Test extends SpecificationWithJUnit {
               |pid:545766238 ecl:hzl
               |eyr:2022
               |
-              |iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719""".stripMargin
+              |iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719"""
+              .stripMargin
 
           solve2(input) must_=== 4
         }
