@@ -16,28 +16,30 @@ class Day03Test extends SpecificationWithJUnit {
     }.toSeq
   }
 
+  trait ExampleContext extends Scope {
+    protected val exampleInput: Seq[String] =
+      """
+              ..##.......
+        |#...#...#..
+        |.#....#..#.
+        |..#.#...#.#
+        |.#...##..#.
+        |..#.##.....
+        |.#.#.#....#
+        |.#........#
+        |#.##...#...
+        |#...##....#
+        |.#..#...#.#"""
+        .cleanInput.toSeq
+  }
+
   "Day Three" should {
 
     "Part One" should {
       "Examples" should {
 
-        "solve first example" in {
-          val input =
-            """
-              ..##.......
-              |#...#...#..
-              |.#....#..#.
-              |..#.#...#.#
-              |.#...##..#.
-              |..#.##.....
-              |.#.#.#....#
-              |.#........#
-              |#.##...#...
-              |#...##....#
-              |.#..#...#.#"""
-              .cleanInput.toSeq
-
-          solve1(input) must_=== 7
+        "solve first example" in new ExampleContext {
+          solve1(exampleInput) must_=== 7
         }
       }
 
@@ -48,24 +50,8 @@ class Day03Test extends SpecificationWithJUnit {
 
     "Part Two" should {
       "Examples" should {
-        "solve first example" in {
-
-          val input =
-            """
-              ..##.......
-              |#...#...#..
-              |.#....#..#.
-              |..#.#...#.#
-              |.#...##..#.
-              |..#.##.....
-              |.#.#.#....#
-              |.#........#
-              |#.##...#...
-              |#...##....#
-              |.#..#...#.#"""
-              .cleanInput.toSeq
-
-          solve2(input) must_=== 336
+        "solve first example" in new ExampleContext {
+          solve2(exampleInput) must_=== 336
         }
       }
 
