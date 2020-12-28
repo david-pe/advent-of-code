@@ -15,64 +15,66 @@ class Day10Test extends SpecificationWithJUnit {
     }
   }
 
+  trait ExampleContext extends Scope {
+    val exampleInput1: Seq[Int] =
+      """16
+        |10
+        |15
+        |5
+        |1
+        |11
+        |7
+        |19
+        |6
+        |12
+        |4
+        |""".stripMargin.split('\n').map(_.toInt).toSeq
+
+    val exampleInput2: Seq[Int] =
+      """28
+        |33
+        |18
+        |42
+        |31
+        |14
+        |46
+        |20
+        |48
+        |47
+        |24
+        |23
+        |49
+        |45
+        |19
+        |38
+        |39
+        |11
+        |1
+        |32
+        |25
+        |35
+        |8
+        |17
+        |7
+        |9
+        |4
+        |2
+        |34
+        |10
+        |3""".stripMargin.split('\n').map(_.toInt).toSeq
+  }
+
   "Day Ten" should {
 
     "Part One" should {
       "Examples" should {
 
-        "solve first example" in {
-          val input =
-            """16
-              |10
-              |15
-              |5
-              |1
-              |11
-              |7
-              |19
-              |6
-              |12
-              |4
-              |""".stripMargin.split('\n').map(_.toInt).toSeq
-
-          solve1(input) must_=== 7 * 5
+        "solve first example" in new ExampleContext {
+          solve1(exampleInput1) must_=== 7 * 5
         }
 
-        "solve second example" in {
-          val input =
-            """28
-              |33
-              |18
-              |42
-              |31
-              |14
-              |46
-              |20
-              |48
-              |47
-              |24
-              |23
-              |49
-              |45
-              |19
-              |38
-              |39
-              |11
-              |1
-              |32
-              |25
-              |35
-              |8
-              |17
-              |7
-              |9
-              |4
-              |2
-              |34
-              |10
-              |3""".stripMargin.split('\n').map(_.toInt).toSeq
-
-          solve1(input) must_=== 22 * 10
+        "solve second example" in new ExampleContext {
+          solve1(exampleInput2) must_=== 22 * 10
         }
       }
 
@@ -85,59 +87,12 @@ class Day10Test extends SpecificationWithJUnit {
     "Part Two" should {
 
       "Examples" should {
-        "solve first example" in {
-          val input =
-            """16
-              |10
-              |15
-              |5
-              |1
-              |11
-              |7
-              |19
-              |6
-              |12
-              |4
-              |""".stripMargin.split('\n').map(_.toInt).toSeq
-
-          solve2(input) must_=== 8
+        "solve first example" in new ExampleContext {
+           solve2(exampleInput1) must_=== 8
         }
 
-        "solve second example" in {
-          val input =
-            """28
-              |33
-              |18
-              |42
-              |31
-              |14
-              |46
-              |20
-              |48
-              |47
-              |24
-              |23
-              |49
-              |45
-              |19
-              |38
-              |39
-              |11
-              |1
-              |32
-              |25
-              |35
-              |8
-              |17
-              |7
-              |9
-              |4
-              |2
-              |34
-              |10
-              |3""".stripMargin.split('\n').map(_.toInt).toSeq
-
-          solve2(input) must_=== 19208
+        "solve second example" in new ExampleContext {
+          solve2(exampleInput2) must_=== 19208
         }
       }
 
