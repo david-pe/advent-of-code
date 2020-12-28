@@ -39,7 +39,7 @@ class Day11Test extends SpecificationWithJUnit {
       }
 
       "solve it" in new Context {
-        solve1(input) must_=== 3000
+        solve1(input) must_=== 2211
       }
     }
 
