@@ -9,17 +9,11 @@ object Day09 {
           section.last == first + second))).head.last
 
   def solve2(input: Seq[Long], target: Long): Long = {
-    var found: Option[Long] = None
-    var size = 2
-    while (found.isEmpty) {
-      found = input.sliding(size)
+    (for {
+      size <- Iterator.from(2).toSeq
+      found <- input.sliding(size)
         .find(_.sum == target)
         .map(x => x.min + x.max)
-
-      size += 1
-    }
-    found.get
+    } yield found).head
   }
-
-
 }

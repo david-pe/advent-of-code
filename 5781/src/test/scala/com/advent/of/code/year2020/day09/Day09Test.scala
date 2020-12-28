@@ -15,35 +15,38 @@ class Day09Test extends SpecificationWithJUnit {
     }
   }
 
+  trait ExampleContext extends Scope {
+    val exampleInput: Array[Long] =
+      """35
+        |20
+        |15
+        |25
+        |47
+        |40
+        |62
+        |55
+        |65
+        |95
+        |102
+        |117
+        |150
+        |182
+        |127
+        |219
+        |299
+        |277
+        |309
+        |576""".stripMargin.split('\n').map(_.toLong)
+
+  }
+
   "Day Nine" should {
 
     "Part One" should {
       "Examples" should {
 
-        "solve first example" in {
-          val input =
-            """35
-              |20
-              |15
-              |25
-              |47
-              |40
-              |62
-              |55
-              |65
-              |95
-              |102
-              |117
-              |150
-              |182
-              |127
-              |219
-              |299
-              |277
-              |309
-              |576""".stripMargin.split('\n').map(_.toLong)
-
-          solve1(input, 5) must_=== 127
+        "solve first example" in new ExampleContext {
+          solve1(exampleInput, 5) must_=== 127
         }
       }
 
@@ -55,31 +58,10 @@ class Day09Test extends SpecificationWithJUnit {
 
     "Part Two" should {
 
-      "solve first example" in {
-
-        val input =
-          """35
-            |20
-            |15
-            |25
-            |47
-            |40
-            |62
-            |55
-            |65
-            |95
-            |102
-            |117
-            |150
-            |182
-            |127
-            |219
-            |299
-            |277
-            |309
-            |576""".stripMargin.split('\n').map(_.toLong)
-
-        solve2(input, solve1(input, 5)) must_=== 62
+      "Examples" should {
+        "solve first example" in new ExampleContext {
+          solve2(exampleInput, solve1(exampleInput, 5)) must_=== 62
+        }
       }
 
       "solve it" in new Context {
