@@ -5,6 +5,7 @@ import scala.collection.mutable
 object Day08 {
 
   type Ops = Map[Int, (String, Int)]
+
   val (jmp, nop, acc) = ("jmp", "nop", "acc")
 
   def solve1(input: Iterator[String]): Int = {
@@ -25,7 +26,6 @@ object Day08 {
         }
       } yield result
     }.head
-
   }
 
   private def computer(ops: Ops): Output = {
