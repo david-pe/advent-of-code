@@ -7,28 +7,20 @@ object Day12 {
     val initialShip = Ship(0, Pos(0, 0))
 
     val finalShip = parseInput(input)
-      .foldLeft(initialShip)((ship, instruction) => {
-        instruction match {
-          case ("N", value) => ship.moveYBy(value)
-          case ("S", value) => ship.moveYBy(-value)
-          case ("E", value) => ship.moveXBy(value)
-          case ("W", value) => ship.moveXBy(-value)
-          case ("L", value) => ship.turnLeft(value)
-          case ("R", value) => ship.turnRight(value)
-          case ("F", value) => ship.moveForward(value)
-        }
-      })
+      .foldLeft(initialShip)(
+        (ship, command) => {
+          command match {
+            case ("N", value) => ship.moveYBy(value)
+            case ("S", value) => ship.moveYBy(-value)
+            case ("E", value) => ship.moveXBy(value)
+            case ("W", value) => ship.moveXBy(-value)
+            case ("L", value) => ship.turnLeft(value)
+            case ("R", value) => ship.turnRight(value)
+            case ("F", value) => ship.moveForward(value)
+          }
+        })
 
     finalShip.distance
-  }
-
-  private def parseInput(input: Array[String]) = {
-    val opRegex = raw"([A-Z])(\d*)".r
-    for {
-      instruction <- input flatMap {
-        case opRegex(action, value) => Some(action -> value.toInt)
-      }
-    } yield instruction
   }
 
   def solve2(input: Array[String]): Long = {
@@ -49,18 +41,23 @@ object Day12 {
     finalState.ship.distance
   }
 
+  private def parseInput(input: Array[String]) = {
+    val opRegex = raw"([A-Z])(\d*)".r
+    for {
+      instruction <- input flatMap {
+        case opRegex(action, value) => Some(action -> value.toInt)
+      }
+    } yield instruction
+  }
+
   case class Ship(direction: Int, pos: Pos) {
-    def distance = pos.distance
+    def distance: Int = pos.distance
 
-    def turnLeft(angle: Int) = {
-      copy(direction = (direction + 360 - angle) % 360)
-    }
+    def turnLeft(angle: Int): Ship = copy(direction = (direction + 360 - angle) % 360)
 
-    def turnRight(angle: Int) = {
-      copy(direction = (direction + angle) % 360)
-    }
+    def turnRight(angle: Int): Ship = copy(direction = (direction + angle) % 360)
 
-    def moveForward(value: Int) = {
+    def moveForward(value: Int): Ship = {
       this.direction match {
         case 0 => moveXBy(value)
         case 90 => moveYBy(-value)
@@ -69,27 +66,19 @@ object Day12 {
       }
     }
 
-    def moveXBy(x: Int): Ship = {
-      copy(pos = pos.moveXBy(x))
-    }
+    def moveXBy(x: Int): Ship = copy(pos = pos.moveXBy(x))
 
-    def moveYBy(y: Int): Ship = {
-      copy(pos = pos.moveYBy(y))
-    }
+    def moveYBy(y: Int): Ship = copy(pos = pos.moveYBy(y))
   }
 
   case class Pos(x: Int, y: Int) {
-    def distance = Math.abs(x) + Math.abs(y)
+    def distance: Int = Math.abs(x) + Math.abs(y)
 
-    def moveXBy(value: Int): Pos = {
-      copy(x = x + value)
-    }
+    def moveXBy(value: Int): Pos = copy(x = x + value)
 
-    def moveYBy(value: Int): Pos = {
-      copy(y = y + value)
-    }
+    def moveYBy(value: Int): Pos = copy(y = y + value)
 
-    def rotateBy(angle: Int) = {
+    def rotateBy(angle: Int): Pos = {
       val rads = angle * Math.PI / 180
       val rotatedX = Math.cos(rads) * x + Math.sin(rads) * y
       val rotatedY = Math.cos(rads) * y - Math.sin(rads) * x
@@ -101,13 +90,13 @@ object Day12 {
   }
 
   case class ShipState(ship: Pos, waypoint: Pos) {
-    def moveWaypointX(x: Int) = copy(waypoint = waypoint.moveXBy(x))
+    def moveWaypointX(x: Int): ShipState = copy(waypoint = waypoint.moveXBy(x))
 
-    def moveWaypointY(y: Int) = copy(waypoint = waypoint.moveYBy(y))
+    def moveWaypointY(y: Int): ShipState = copy(waypoint = waypoint.moveYBy(y))
 
-    def rotateWaypoint(angle: Int) = copy(waypoint = waypoint.rotateBy(angle))
+    def rotateWaypoint(angle: Int): ShipState = copy(waypoint = waypoint.rotateBy(angle))
 
-    def moveShipBy(distance: Int) = copy(ship =
+    def moveShipBy(distance: Int): ShipState = copy(ship =
       ship.moveXBy(distance * waypoint.x).moveYBy(distance * waypoint.y)
     )
   }

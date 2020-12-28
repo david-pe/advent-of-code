@@ -15,20 +15,23 @@ class Day12Test extends SpecificationWithJUnit {
     }
   }
 
+  trait ExampleContext extends Scope {
+    val exampleInput: Array[String] =
+      """F10
+        |N3
+        |F7
+        |R90
+        |F11""".stripMargin.split('\n')
+  }
+
+
   "Day Twelve" should {
 
     "Part One" should {
       "Examples" should {
 
-        "solve first example" in {
-          val input =
-            """F10
-              |N3
-              |F7
-              |R90
-              |F11""".stripMargin.split('\n')
-
-          solve1(input) must_=== 25
+        "solve first example" in new ExampleContext {
+          solve1(exampleInput) must_=== 25
         }
 
       }
@@ -42,15 +45,8 @@ class Day12Test extends SpecificationWithJUnit {
     "Part Two" should {
 
       "Examples" should {
-        "solve first example" in {
-          val input =
-            """F10
-              |N3
-              |F7
-              |R90
-              |F11""".stripMargin.split('\n')
-
-          solve2(input) must_=== 286
+        "solve first example" in new ExampleContext {
+          solve2(exampleInput) must_=== 286
         }
 
       }
