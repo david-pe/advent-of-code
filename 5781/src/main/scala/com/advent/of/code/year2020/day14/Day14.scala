@@ -14,7 +14,7 @@ object Day14 {
           instructions.map {
             case Instruction(address, value) =>
               address -> mask.foldLeft(value) {
-                case (newValue, Mask(0, bit)) => if ((value & bit) != 0) newValue - bit else newValue
+                case (newValue, Mask(0, bit)) => newValue - (value & bit)
                 case (newValue, Mask(1, bit)) => if ((value & bit) == 0) newValue + bit else newValue
                 case (_, Mask(invalid, _)) => throw new RuntimeException(s"invalid mask instruction, $invalid")
               }
@@ -37,7 +37,7 @@ object Day14 {
                 mask.masks.foldLeft(address.toLong) {
                   case (newAddress, Mask(0, bit)) =>
                     val bitValue = math.pow(2, bit).toLong
-                    if ((address & bitValue) != 0) newAddress - bitValue else newAddress
+                    newAddress - (address & bitValue)
                   case (newAddress, Mask(1, bit)) =>
                     val bitValue = math.pow(2, bit).toLong
                     if ((address & bitValue) == 0) newAddress + bitValue else newAddress
