@@ -9,27 +9,23 @@ object Day15 {
   }
 
   def solve1(input: Seq[Int], end: Int = 2020): Long = {
-    var init = false
-    var last = input.last
-
     val positions = mutable.Map() ++
       input.zipWithIndex.map(x => x._1 -> (x._2 -> x._2))
 
+    var last = 0
     for {
       index <- input.size until end
-    } yield {
-      last = if (!positions.contains(last) || !init) {
-        init = true
-        0
-      } else {
-        positions(last) match {
-          case (previous, previousPrevious) => previousPrevious - previous
-        }
+    } {
+      last = if (!positions.contains(last)) 0
+      else positions(last) match {
+        case (previous, previousPrevious) => previousPrevious - previous
       }
+
       positions(last) = positions.getOrElseUpdate(last, index -> index) match {
         case (_, previous) => previous -> index
       }
     }
+
     last
   }
 }
