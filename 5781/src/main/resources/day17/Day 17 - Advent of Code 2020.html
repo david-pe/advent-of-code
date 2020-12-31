@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://adventofcode.com/2020/day/17 -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Day 17 - Advent of Code 2020</title>
+<!--[if lt IE 9]><script src="/static/html5.js"></script><![endif]-->
+<link href="./Day 17 - Advent of Code 2020_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./Day 17 - Advent of Code 2020_files/style.css">
+<link rel="stylesheet alternate" type="text/css" href="./Day 17 - Advent of Code 2020_files/highcontrast.css" title="High Contrast">
+<link rel="shortcut icon" href="https://adventofcode.com/favicon.png">
+<link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/6b402273-2c0f-4066-a70d-375013b0a0bd"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/a22b0ee6-294e-41f0-981e-862a8fd12bdf"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/bab56f10-f8d1-43d6-b1c9-238493bce02a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/97487e88-7a1e-4b06-8d2b-5ec119eb8888"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2699033a-9716-43be-aabc-a078b1cbaf12"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e115e818-1b12-48df-9b9a-61f1a1ea67aa"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/dd7b92af-1154-4be9-aab3-13813e2191b5"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/71726cb6-1959-45d4-a4e0-f08c2fa13f05"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/b1534f85-df70-4b4b-9c49-e4c2208583f0"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/24700b6f-1f31-4777-b1be-84802d813dc5"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e6af8509-269b-4c9b-a324-ef183948820c"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cd166158-cbae-4aff-bf4e-ac8bb7a6c37d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/7550337a-a449-4359-91a1-9c21cffec788"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e981c9da-c955-4dc2-af9d-6a1290c8784f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9889c998-a67f-4485-a81d-370809329c8f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e867344f-cf5c-4abf-ac6a-0b22aef0092c"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9bb210f0-6d97-4fe6-9928-4ed86ac55e5a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/da9c64cd-d94e-4379-9f20-6527f93160cd"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/3e1493ea-ec56-4c90-88d3-137655aac383"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8127b9f8-5868-4b3f-a25a-3722e84b2f57"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c169e755-5006-43fb-9f56-636d12971f03"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/15af3cbb-9b5e-41eb-b496-a59e8e4cd693"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/a073e835-eb04-4341-93fc-dba6fa4e4e89"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c57c5eb7-8c76-44c7-9f6c-25ad97047720"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8d511f63-f8b6-4df6-afa3-3095167e7257"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/20f661bc-a410-402d-8ba8-a3a0697a2a2d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/39c16a10-bf63-4bd8-a54a-651067378fad"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/41ecb930-74e1-427b-a3e1-1376de095911"></head><!--
+
+
+
+
+Oh, hello!  Funny seeing you here.
+
+I appreciate your enthusiasm, but you aren't going to find much down here.
+There certainly aren't clues to any of the puzzles.  The best surprises don't
+even appear in the source until you unlock them for real.
+
+Please be careful with automated requests; I'm not a massive company, and I can
+only take so much traffic.  Please be considerate so that everyone gets to play.
+
+If you're curious about how Advent of Code works, it's running on some custom
+Perl code. Other than a few integrations (auth, analytics, social media), I
+built the whole thing myself, including the design, animations, prose, and all
+of the puzzles.
+
+The puzzles are most of the work; preparing a new calendar and a new set of
+puzzles each year takes all of my free time for 4-5 months. A lot of effort
+went into building this thing - I hope you're enjoying playing it as much as I
+enjoyed making it for you!
+
+If you'd like to hang out, I'm @ericwastl on Twitter.
+
+- Eric Wastl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<body>
+<header><div><h1 class="title-global"><a href="https://adventofcode.com/">Advent of Code</a></h1><nav><ul><li><a href="https://adventofcode.com/2020/about">[About]</a></li><li><a href="https://adventofcode.com/2020/events">[Events]</a></li><li><a href="https://teespring.com/stores/advent-of-code" target="_blank">[Shop]</a></li><li><a href="https://adventofcode.com/2020/settings">[Settings]</a></li><li><a href="https://adventofcode.com/2020/auth/logout">[Log Out]</a></li></ul></nav><div class="user">David Perlman <a href="https://adventofcode.com/2020/support" class="supporter-badge" title="Advent of Code Supporter">(AoC++)</a> <a href="https://www.wix.com/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;badge&#39;,this.href);" class="sponsor-badge" title="Member of sponsor: Wix.com">(Sponsor)</a> <span class="star-count">50*</span></div></div><div><h1 class="title-event">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="title-event-wrap">y(</span><a href="https://adventofcode.com/2020">2020</a><span class="title-event-wrap">)</span></h1><nav><ul><li><a href="https://adventofcode.com/2020">[Calendar]</a></li><li><a href="https://adventofcode.com/2020/support">[AoC++]</a></li><li><a href="https://adventofcode.com/2020/sponsors">[Sponsors]</a></li><li><a href="https://adventofcode.com/2020/leaderboard">[Leaderboard]</a></li><li><a href="https://adventofcode.com/2020/stats">[Stats]</a></li></ul></nav></div></header>
+
+<div id="sidebar">
+<div id="sponsor"><div class="quiet">Our <a href="https://adventofcode.com/2020/sponsors">sponsors</a> help make Advent of Code possible:</div><div class="sponsor"><a href="https://www.novetta.com/careers/#benefits-perks" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;sidebar&#39;,this.href);" rel="noopener">Novetta</a> - While Santa has elves, we have TS/SCI data scientists rapidly prototyping ML solutions...hot chocolate included. Check us out.</div></div>
+</div><!--/sidebar-->
+
+<main>
+<style>article *[title]{border-bottom:1px dotted #ffff66;}</style><script async="" src="./Day 17 - Advent of Code 2020_files/analytics.js"></script><script>window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});</script>
+<article class="day-desc"><h2>--- Day 17: Conway Cubes ---</h2><p>As your flight slowly drifts through the sky, the Elves at the Mythical Information Bureau at the North Pole contact you. They'd like some help debugging a malfunctioning experimental energy source aboard one of their super-secret imaging satellites.</p>
+<p>The experimental energy source is based on cutting-edge technology: a set of <span title="Rest in peace, Conway.">Conway</span> Cubes contained in a pocket dimension! When you hear it's having problems, you can't help but agree to take a look.</p>
+<p>The pocket dimension contains an infinite 3-dimensional grid. At every integer 3-dimensional coordinate (<code>x,y,z</code>), there exists a single cube which is either <em>active</em> or <em>inactive</em>.</p>
+<p>In the initial state of the pocket dimension, almost all cubes start <em>inactive</em>. The only exception to this is a small flat region of cubes (your puzzle input); the cubes in this region start in the specified <em>active</em> (<code>#</code>) or <em>inactive</em> (<code>.</code>) state.</p>
+<p>The energy source then proceeds to boot up by executing six <em>cycles</em>.</p>
+<p>Each cube only ever considers its <em>neighbors</em>: any of the 26 other cubes where any of their coordinates differ by at most <code>1</code>. For example, given the cube at <code>x=1,y=2,z=3</code>, its neighbors include the cube at <code>x=2,y=2,z=2</code>, the cube at <code>x=0,y=2,z=3</code>, and so on.</p>
+<p>During a cycle, <em>all</em> cubes <em>simultaneously</em> change their state according to the following rules:</p>
+<ul>
+<li>If a cube is <em>active</em> and <em>exactly <code>2</code> or <code>3</code></em> of its neighbors are also active, the cube remains <em>active</em>. Otherwise, the cube becomes <em>inactive</em>.</li>
+<li>If a cube is <em>inactive</em> but <em>exactly <code>3</code></em> of its neighbors are active, the cube becomes <em>active</em>. Otherwise, the cube remains <em>inactive</em>.</li>
+</ul>
+<p>The engineers responsible for this experimental energy source would like you to simulate the pocket dimension and determine what the configuration of cubes should be at the end of the six-cycle boot process.</p>
+<p>For example, consider the following initial state:</p>
+<pre><code>.#.
+..#
+###
+</code></pre>
+<p>Even though the pocket dimension is 3-dimensional, this initial state represents a small 2-dimensional slice of it. (In particular, this initial state defines a 3x3x1 region of the 3-dimensional space.)</p>
+<p>Simulating a few cycles from this initial state produces the following configurations, where the result of each cycle is shown layer-by-layer at each given <code>z</code> coordinate (and the frame of view follows the active cells in each cycle):</p>
+<pre><code>Before any cycles:
+
+z=0
+.#.
+..#
+###
+
+
+After 1 cycle:
+
+z=-1
+#..
+..#
+.#.
+
+z=0
+#.#
+.##
+.#.
+
+z=1
+#..
+..#
+.#.
+
+
+After 2 cycles:
+
+z=-2
+.....
+.....
+..#..
+.....
+.....
+
+z=-1
+..#..
+.#..#
+....#
+.#...
+.....
+
+z=0
+##...
+##...
+#....
+....#
+.###.
+
+z=1
+..#..
+.#..#
+....#
+.#...
+.....
+
+z=2
+.....
+.....
+..#..
+.....
+.....
+
+
+After 3 cycles:
+
+z=-2
+.......
+.......
+..##...
+..###..
+.......
+.......
+.......
+
+z=-1
+..#....
+...#...
+#......
+.....##
+.#...#.
+..#.#..
+...#...
+
+z=0
+...#...
+.......
+#......
+.......
+.....##
+.##.#..
+...#...
+
+z=1
+..#....
+...#...
+#......
+.....##
+.#...#.
+..#.#..
+...#...
+
+z=2
+.......
+.......
+..##...
+..###..
+.......
+.......
+.......
+</code></pre>
+<p>After the full six-cycle boot process completes, <em><code>112</code></em> cubes are left in the <em>active</em> state.</p>
+<p>Starting with your given initial configuration, simulate six cycles. <em>How many cubes are left in the active state after the sixth cycle?</em></p>
+</article>
+<p>Your puzzle answer was <code>313</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>For some reason, your simulated results don't match what the experimental energy source engineers expected. Apparently, the pocket dimension actually has <em>four spatial dimensions</em>, not three.</p>
+<p>The pocket dimension contains an infinite 4-dimensional grid. At every integer 4-dimensional coordinate (<code>x,y,z,w</code>), there exists a single cube (really, a <em>hypercube</em>) which is still either <em>active</em> or <em>inactive</em>.</p>
+<p>Each cube only ever considers its <em>neighbors</em>: any of the 80 other cubes where any of their coordinates differ by at most <code>1</code>. For example, given the cube at <code>x=1,y=2,z=3,w=4</code>, its neighbors include the cube at <code>x=2,y=2,z=3,w=3</code>, the cube at <code>x=0,y=2,z=3,w=4</code>, and so on.</p>
+<p>The initial state of the pocket dimension still consists of a small flat region of cubes. Furthermore, the same rules for cycle updating still apply: during each cycle, consider the <em>number of active neighbors</em> of each cube.</p>
+<p>For example, consider the same initial state as in the example above. Even though the pocket dimension is 4-dimensional, this initial state represents a small 2-dimensional slice of it. (In particular, this initial state defines a 3x3x1x1 region of the 4-dimensional space.)</p>
+<p>Simulating a few cycles from this initial state produces the following configurations, where the result of each cycle is shown layer-by-layer at each given <code>z</code> and <code>w</code> coordinate:</p>
+<pre><code>Before any cycles:
+
+z=0, w=0
+.#.
+..#
+###
+
+
+After 1 cycle:
+
+z=-1, w=-1
+#..
+..#
+.#.
+
+z=0, w=-1
+#..
+..#
+.#.
+
+z=1, w=-1
+#..
+..#
+.#.
+
+z=-1, w=0
+#..
+..#
+.#.
+
+z=0, w=0
+#.#
+.##
+.#.
+
+z=1, w=0
+#..
+..#
+.#.
+
+z=-1, w=1
+#..
+..#
+.#.
+
+z=0, w=1
+#..
+..#
+.#.
+
+z=1, w=1
+#..
+..#
+.#.
+
+
+After 2 cycles:
+
+z=-2, w=-2
+.....
+.....
+..#..
+.....
+.....
+
+z=-1, w=-2
+.....
+.....
+.....
+.....
+.....
+
+z=0, w=-2
+###..
+##.##
+#...#
+.#..#
+.###.
+
+z=1, w=-2
+.....
+.....
+.....
+.....
+.....
+
+z=2, w=-2
+.....
+.....
+..#..
+.....
+.....
+
+z=-2, w=-1
+.....
+.....
+.....
+.....
+.....
+
+z=-1, w=-1
+.....
+.....
+.....
+.....
+.....
+
+z=0, w=-1
+.....
+.....
+.....
+.....
+.....
+
+z=1, w=-1
+.....
+.....
+.....
+.....
+.....
+
+z=2, w=-1
+.....
+.....
+.....
+.....
+.....
+
+z=-2, w=0
+###..
+##.##
+#...#
+.#..#
+.###.
+
+z=-1, w=0
+.....
+.....
+.....
+.....
+.....
+
+z=0, w=0
+.....
+.....
+.....
+.....
+.....
+
+z=1, w=0
+.....
+.....
+.....
+.....
+.....
+
+z=2, w=0
+###..
+##.##
+#...#
+.#..#
+.###.
+
+z=-2, w=1
+.....
+.....
+.....
+.....
+.....
+
+z=-1, w=1
+.....
+.....
+.....
+.....
+.....
+
+z=0, w=1
+.....
+.....
+.....
+.....
+.....
+
+z=1, w=1
+.....
+.....
+.....
+.....
+.....
+
+z=2, w=1
+.....
+.....
+.....
+.....
+.....
+
+z=-2, w=2
+.....
+.....
+..#..
+.....
+.....
+
+z=-1, w=2
+.....
+.....
+.....
+.....
+.....
+
+z=0, w=2
+###..
+##.##
+#...#
+.#..#
+.###.
+
+z=1, w=2
+.....
+.....
+.....
+.....
+.....
+
+z=2, w=2
+.....
+.....
+..#..
+.....
+.....
+</code></pre>
+<p>After the full six-cycle boot process completes, <em><code>848</code></em> cubes are left in the <em>active</em> state.</p>
+<p>Starting with your given initial configuration, simulate six cycles in a 4-dimensional space. <em>How many cubes are left in the active state after the sixth cycle?</em></p>
+</article>
+<p>Your puzzle answer was <code>2640</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>At this point, all that is left is for you to <a href="https://adventofcode.com/2020">admire your Advent calendar</a>.</p>
+<p>If you still want to see it, you can <a href="https://adventofcode.com/2020/day/17/input" target="_blank">get your puzzle input</a>.</p>
+<p>You can also <span class="share">[Share<span class="share-content">on
+  <a href="https://twitter.com/intent/tweet?text=I%27ve+completed+%22Conway+Cubes%22+%2D+Day+17+%2D+Advent+of+Code+2020&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F17&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+  <a href="javascript:void(0);" onclick="var mastodon_instance=prompt(&#39;Mastodon Instance / Server Name?&#39;); if(typeof mastodon_instance===&#39;string&#39; &amp;&amp; mastodon_instance.length){this.href=&#39;https://&#39;+mastodon_instance+&#39;/share?text=I%27ve+completed+%22Conway+Cubes%22+%2D+Day+17+%2D+Advent+of+Code+2020+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F17&#39;}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
+</main>
+
+<!-- ga -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69522494-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<!-- /ga -->
+
+</body></html>
