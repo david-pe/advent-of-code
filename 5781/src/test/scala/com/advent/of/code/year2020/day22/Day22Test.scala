@@ -32,7 +32,7 @@ class Day22Test extends SpecificationWithJUnit {
         |10""".stripMargin.split("\n\n")
   }
 
-  "Day Twenty" should {
+  "Day Twenty Two" should {
 
     "Part One" should {
       "Examples" should {

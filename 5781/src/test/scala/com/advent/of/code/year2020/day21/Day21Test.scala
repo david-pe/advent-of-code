@@ -22,7 +22,7 @@ class Day21Test extends SpecificationWithJUnit {
                   |sqjhc mxmxvkd sbzzf (contains fish)""".stripMargin.split("\n")
   }
 
-  "Day Twenty" should {
+  "Day Twenty One" should {
 
     "Part One" should {
       "Examples" should {
