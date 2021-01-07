@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://adventofcode.com/2020/day/23 -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Day 23 - Advent of Code 2020</title>
+<!--[if lt IE 9]><script src="/static/html5.js"></script><![endif]-->
+<link href="./Day 23 - Advent of Code 2020_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./Day 23 - Advent of Code 2020_files/style.css">
+<link rel="stylesheet alternate" type="text/css" href="./Day 23 - Advent of Code 2020_files/highcontrast.css" title="High Contrast">
+<link rel="shortcut icon" href="https://adventofcode.com/favicon.png">
+<link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8f7fa5b6-326e-4994-9419-b2b43420c220"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/6c9f336a-291c-4f1f-93b7-467054287537"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/0595e99d-6b6d-4a55-af66-9be4b15bdf4e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/efe6c87f-55ea-42ac-8c37-c89936f1ab88"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cfacf299-c6fc-45f2-aa1a-fdcebe2a88ad"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e1a0a73f-71ba-48e7-b87a-e1cacfb585a5"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/804c2194-6f80-4056-9fb8-37af6f1c495a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/a1dd9d15-8be0-4a73-a2bf-46c37fed7a0f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/f72edf5f-5211-4d63-aeae-a06e754015c9"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/84caa47e-4f10-4408-9948-75a7e00d009b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/f5d6406f-c8be-4e1a-9a8c-5665e7585cff"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/77c36174-992a-45aa-83b7-cccdf043478d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9e9366db-2c02-44a8-b555-018927e9c95d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/6a2d3961-4312-4deb-8420-76a836a97311"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/17f25f39-dc3f-430c-9491-2ea448e63f2e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/de4f072d-7347-41d8-a19e-fe28fc424724"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2451fcda-7537-499d-9515-11826bdec67d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9c19b671-1849-45a2-bb27-be669df62973"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9c783b41-502b-4e5c-b7ae-62a7f6e909fe"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/59a85c51-d5de-4b11-8f68-b6b976dc8987"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c6323253-c187-48c4-b1d3-32cbe66abb70"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/d5eeea25-29d8-4070-9762-45cd19e2a24d"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cdeb7df0-2833-4f75-bdaf-9df66aa06195"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/65958005-c97b-413d-8f09-66c4486d4034"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/a587c5d3-48c1-4f0e-be8c-0adf31e2a52f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/55e08a5e-6e1e-45e4-a5da-d81fd7999e57"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/da2d7f74-01ef-45cf-a22d-8e7d283fc4cd"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/d2f64022-9f17-4f96-ab29-8c256a549caa"></head><!--
+
+
+
+
+Oh, hello!  Funny seeing you here.
+
+I appreciate your enthusiasm, but you aren't going to find much down here.
+There certainly aren't clues to any of the puzzles.  The best surprises don't
+even appear in the source until you unlock them for real.
+
+Please be careful with automated requests; I'm not a massive company, and I can
+only take so much traffic.  Please be considerate so that everyone gets to play.
+
+If you're curious about how Advent of Code works, it's running on some custom
+Perl code. Other than a few integrations (auth, analytics, social media), I
+built the whole thing myself, including the design, animations, prose, and all
+of the puzzles.
+
+The puzzles are most of the work; preparing a new calendar and a new set of
+puzzles each year takes all of my free time for 4-5 months. A lot of effort
+went into building this thing - I hope you're enjoying playing it as much as I
+enjoyed making it for you!
+
+If you'd like to hang out, I'm @ericwastl on Twitter.
+
+- Eric Wastl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<body>
+<header><div><h1 class="title-global"><a href="https://adventofcode.com/">Advent of Code</a></h1><nav><ul><li><a href="https://adventofcode.com/2020/about">[About]</a></li><li><a href="https://adventofcode.com/2020/events">[Events]</a></li><li><a href="https://teespring.com/stores/advent-of-code" target="_blank">[Shop]</a></li><li><a href="https://adventofcode.com/2020/settings">[Settings]</a></li><li><a href="https://adventofcode.com/2020/auth/logout">[Log Out]</a></li></ul></nav><div class="user">David Perlman <a href="https://adventofcode.com/2020/support" class="supporter-badge" title="Advent of Code Supporter">(AoC++)</a> <a href="https://www.wix.com/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;badge&#39;,this.href);" class="sponsor-badge" title="Member of sponsor: Wix.com">(Sponsor)</a> <span class="star-count">50*</span></div></div><div><h1 class="title-event">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="title-event-wrap">/*</span><a href="https://adventofcode.com/2020">2020</a><span class="title-event-wrap">*/</span></h1><nav><ul><li><a href="https://adventofcode.com/2020">[Calendar]</a></li><li><a href="https://adventofcode.com/2020/support">[AoC++]</a></li><li><a href="https://adventofcode.com/2020/sponsors">[Sponsors]</a></li><li><a href="https://adventofcode.com/2020/leaderboard">[Leaderboard]</a></li><li><a href="https://adventofcode.com/2020/stats">[Stats]</a></li></ul></nav></div></header>
+
+<div id="sidebar">
+<div id="sponsor"><div class="quiet">Our <a href="https://adventofcode.com/2020/sponsors">sponsors</a> help make Advent of Code possible:</div><div class="sponsor"><a href="https://www.wix.com/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;sidebar&#39;,this.href);" rel="noopener">Wix.com</a> - Come solve the most difficult puzzles with us at Wix. Hiring in Israel, Ukraine &amp; Lithuania. Send your CV or AoC repo to aoc@wix.com</div></div>
+</div><!--/sidebar-->
+
+<main>
+<style>article *[title]{border-bottom:1px dotted #ffff66;}</style><script async="" src="./Day 23 - Advent of Code 2020_files/analytics.js"></script><script>window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});</script>
+<article class="day-desc"><h2>--- Day 23: Crab Cups ---</h2><p>The small crab challenges <em>you</em> to a game! The crab is going to mix up some cups, and you have to predict where they'll end up.</p>
+<p>The cups will be arranged in a circle and labeled <em>clockwise</em> (your puzzle input). For example, if your labeling were <code>32415</code>, there would be five cups in the circle; going clockwise around the circle from the first cup, the cups would be labeled <code>3</code>, <code>2</code>, <code>4</code>, <code>1</code>, <code>5</code>, and then back to <code>3</code> again.</p>
+<p>Before the crab starts, it will designate the first cup in your list as the <em>current cup</em>. The crab is then going to do <em>100 moves</em>.</p>
+<p>Each <em>move</em>, the crab does the following actions:</p>
+<ul>
+<li>The crab picks up the <em>three cups</em> that are immediately <em>clockwise</em> of the <em>current cup</em>. They are removed from the circle; cup spacing is adjusted as necessary to maintain the circle.</li>
+<li>The crab selects a <em>destination cup</em>: the cup with a <em>label</em> equal to the <em>current cup's</em> label minus one. If this would select one of the cups that was just picked up, the crab will keep subtracting one until it finds a cup that wasn't just picked up. If at any point in this process the value goes below the lowest value on any cup's label, it <em>wraps around</em> to the highest value on any cup's label instead.</li>
+<li>The crab places the cups it just picked up so that they are <em>immediately clockwise</em> of the destination cup. They keep the same order as when they were picked up.</li>
+<li>The crab selects a new <em>current cup</em>: the cup which is immediately clockwise of the current cup.</li>
+</ul>
+<p>For example, suppose your cup labeling were <code>389125467</code>. If the crab were to do merely 10 moves, the following changes would occur:</p>
+<pre><code>-- move 1 --
+cups: (3) 8  9  1  2  5  4  6  7 
+pick up: 8, 9, 1
+destination: 2
+
+-- move 2 --
+cups:  3 (2) 8  9  1  5  4  6  7 
+pick up: 8, 9, 1
+destination: 7
+
+-- move 3 --
+cups:  3  2 (5) 4  6  7  8  9  1 
+pick up: 4, 6, 7
+destination: 3
+
+-- move 4 --
+cups:  7  2  5 (8) 9  1  3  4  6 
+pick up: 9, 1, 3
+destination: 7
+
+-- move 5 --
+cups:  3  2  5  8 (4) 6  7  9  1 
+pick up: 6, 7, 9
+destination: 3
+
+-- move 6 --
+cups:  9  2  5  8  4 (1) 3  6  7 
+pick up: 3, 6, 7
+destination: 9
+
+-- move 7 --
+cups:  7  2  5  8  4  1 (9) 3  6 
+pick up: 3, 6, 7
+destination: 8
+
+-- move 8 --
+cups:  8  3  6  7  4  1  9 (2) 5 
+pick up: 5, 8, 3
+destination: 1
+
+-- move 9 --
+cups:  7  4  1  5  8  3  9  2 (6)
+pick up: 7, 4, 1
+destination: 5
+
+-- move 10 --
+cups: (5) 7  4  1  8  3  9  2  6 
+pick up: 7, 4, 1
+destination: 3
+
+-- final --
+cups:  5 (8) 3  7  4  1  9  2  6 
+</code></pre>
+<p>In the above example, the cups' values are the labels as they appear moving clockwise around the circle; the <em>current cup</em> is marked with <code>( )</code>.</p>
+<p>After the crab is done, what order will the cups be in? Starting <em>after the cup labeled <code>1</code></em>, collect the other cups' labels clockwise into a single string with no extra characters; each number except <code>1</code> should appear exactly once. In the above example, after 10 moves, the cups clockwise from <code>1</code> are labeled <code>9</code>, <code>2</code>, <code>6</code>, <code>5</code>, and so on, producing <em><code>92658374</code></em>. If the crab were to complete all 100 moves, the order after cup <code>1</code> would be <em><code>67384529</code></em>.</p>
+<p>Using your labeling, simulate 100 moves. <em>What are the labels on the cups after cup <code>1</code>?</em></p>
+</article>
+<p>Your puzzle answer was <code>28793654</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>Due to what you can only assume is a mistranslation (you're <span title="If I were going for a programming language pun here, I&#39;d say you were a little... RUSTy.">not exactly fluent in Crab</span>), you are quite surprised when the crab starts arranging <em>many</em> cups in a circle on your raft - <em>one million</em> (<code>1000000</code>) in total.</p>
+<p>Your labeling is still correct for the first few cups; after that, the remaining cups are just numbered in an increasing fashion starting from the number after the highest number in your list and proceeding one by one until one million is reached. (For example, if your labeling were <code>54321</code>, the cups would be numbered <code>5</code>, <code>4</code>, <code>3</code>, <code>2</code>, <code>1</code>, and then start counting up from <code>6</code> until one million is reached.) In this way, every number from one through one million is used exactly once.</p>
+<p>After discovering where you made the mistake in translating Crab Numbers, you realize the small crab isn't going to do merely 100 moves; the crab is going to do <em>ten million</em> (<code>10000000</code>) moves!</p>
+<p>The crab is going to hide your <em class="star">stars</em> - one each - under the <em>two cups that will end up immediately clockwise of cup <code>1</code></em>. You can have them if you predict what the labels on those cups will be when the crab is finished.</p>
+<p>In the above example (<code>389125467</code>), this would be <code>934001</code> and then <code>159792</code>; multiplying these together produces <em><code>149245887792</code></em>.</p>
+<p>Determine which two cups will end up immediately clockwise of cup <code>1</code>. <em>What do you get if you multiply their labels together?</em></p>
+</article>
+<p>Your puzzle answer was <code>359206768694</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>At this point, all that is left is for you to <a href="https://adventofcode.com/2020">admire your Advent calendar</a>.</p>
+<p>Your puzzle input was <code class="puzzle-input">871369452</code>.</p>
+<p>You can also <span class="share">[Share<span class="share-content">on
+  <a href="https://twitter.com/intent/tweet?text=I%27ve+completed+%22Crab+Cups%22+%2D+Day+23+%2D+Advent+of+Code+2020&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F23&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+  <a href="javascript:void(0);" onclick="var mastodon_instance=prompt(&#39;Mastodon Instance / Server Name?&#39;); if(typeof mastodon_instance===&#39;string&#39; &amp;&amp; mastodon_instance.length){this.href=&#39;https://&#39;+mastodon_instance+&#39;/share?text=I%27ve+completed+%22Crab+Cups%22+%2D+Day+23+%2D+Advent+of+Code+2020+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2020%2Fday%2F23&#39;}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
+</main>
+
+<!-- ga -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69522494-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<!-- /ga -->
+
+</body></html>
