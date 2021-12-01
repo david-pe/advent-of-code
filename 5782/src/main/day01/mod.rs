@@ -9,5 +9,5 @@ pub fn solve(input: impl Iterator<Item = i32>) -> i32 {
 }
 
 pub fn solve_2(input: impl Iterator<Item = i32>) -> i32 {
-    solve(input.tuple_windows().map(|(x, y, z)| x + y + z))
+    input.tuple_windows().filter(|(x, _, _, y)| x < y).count() as i32
 }
