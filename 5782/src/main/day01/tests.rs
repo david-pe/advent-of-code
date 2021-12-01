@@ -27,10 +27,9 @@ fn example_1() {
 
 #[test]
 fn solve_it() {
-    let input = Asset::read_file("day01/input.txt");
-
-    let clean = input_as_int_arr(&input);
-    assert_eq!(solve(clean), 1583);
+    let file_data = Asset::read_file("day01/input.txt");
+    let input = input_as_int_arr(&file_data);
+    assert_eq!(solve(input), 1583);
 }
 
 #[test]
@@ -43,9 +42,8 @@ fn part_2_example_1() {
 
 #[test]
 fn part_2_solve_it() {
-    let input = Asset::read_file("day01/input.txt");
+    let file_data = Asset::read_file("day01/input.txt");
+    let input = input_as_int_arr(&file_data);
 
-    let clean = input_as_int_arr(&input);
-
-    assert_eq!(solve_2(clean), 1627);
+    assert_eq!(solve_2(input), 1627);
 }
