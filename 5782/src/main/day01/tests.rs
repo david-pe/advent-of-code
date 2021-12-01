@@ -2,9 +2,8 @@ use super::*;
 use crate::assets::Asset;
 use crate::input_as_int_arr;
 
-#[test]
-fn example_1() {
-    let s = String::from(
+fn example_data() -> String {
+    String::from(
         "
               199
               200
@@ -16,9 +15,13 @@ fn example_1() {
               269
               260
               263",
-    );
+    )
+}
 
-    let input = input_as_int_arr(&s);
+#[test]
+fn example_1() {
+    let example = example_data();
+    let input = input_as_int_arr(&example);
     assert_eq!(solve(input), 7);
 }
 
@@ -32,21 +35,8 @@ fn solve_it() {
 
 #[test]
 fn part_2_example_1() {
-    let s = String::from(
-        "
-              199
-              200
-              208
-              210
-              200
-              207
-              240
-              269
-              260
-              263",
-    );
-
-    let input = input_as_int_arr(&s);
+    let example = example_data();
+    let input = input_as_int_arr(&example);
 
     assert_eq!(solve_2(input), 5);
 }
