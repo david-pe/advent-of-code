@@ -5,7 +5,7 @@ mod tests;
 use itertools::Itertools;
 
 fn parse_line(line: &str) -> (&str, i32) {
-    let (instruction, value) = line.split(" ").take(2).next_tuple().unwrap();
+    let (instruction, value) = line.split(" ").next_tuple().unwrap();
 
     (instruction, value.parse::<i32>().unwrap())
 }
