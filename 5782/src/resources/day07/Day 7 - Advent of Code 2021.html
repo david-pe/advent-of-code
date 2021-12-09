@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://adventofcode.com/2021/day/7 -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Day 7 - Advent of Code 2021</title>
+<!--[if lt IE 9]><script src="/static/html5.js"></script><![endif]-->
+<link href="./Day 7 - Advent of Code 2021_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./Day 7 - Advent of Code 2021_files/style.css">
+<link rel="stylesheet alternate" type="text/css" href="./Day 7 - Advent of Code 2021_files/highcontrast.css" title="High Contrast">
+<link rel="shortcut icon" href="https://adventofcode.com/favicon.png">
+<link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9f7d4699-a353-42c2-80d2-465ba82cdb87"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/94b4efb8-8995-4b10-8fed-7ae3dd83f7d4"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/ca2e6e70-4276-46a1-a015-eb8cdc26e32b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c646f6af-7472-4ce1-b7b3-5f8ffe21a560"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/67e81375-c47d-4cfd-bf22-017d0c98c892"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/72f5416f-b30a-4ed9-97dd-88ae30cbe630"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/293c37ab-2deb-4c08-89d4-61dc11bc6391"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/622ac4b3-1db0-4c76-b6f0-e02851989903"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/3c1c84ed-aad4-407f-a042-a6ede73411ea"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/fcc5f43f-da3e-4234-9f34-ea348e65d64b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/f7d619cd-4e22-4b2d-b4ec-e19497fd6c9b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/1165af27-3089-4d83-ac89-5c039b22c865"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/6578ec14-fce0-408b-9748-2eb31d99bc78"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2737efb0-2c11-4380-ba26-2f68cec09a18"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e99d630a-110d-4bb0-9fef-3e1236f7e13b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2029d3ac-6e37-4575-b88e-1ab8c1cabf23"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/adb90a54-0b2c-4b9f-8ac2-03e25c0a0316"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/4720a1ce-67d8-4889-a5cd-27905ae20a7a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/47ba0b2f-a014-4e05-a3cc-55236d6de86e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e4248fbe-df2f-4802-816a-a546203e5de1"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/4525df45-b802-49c5-8676-f17f416626c7"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/02ba4db6-1f77-49cb-bb9f-4f0209dbae40"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e385d6c9-2ac4-48fc-8b42-aeb1eecd6467"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8f3bb187-94c9-4300-821e-a6b5bf6b2380"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/47741870-277d-4c4b-ad65-d3fca529c6d5"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/a609646d-6991-4b8c-9b56-8da2116c3b0e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2ffd7943-d82a-47f5-8cb2-0ada80363470"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8adfe870-62ca-4f6a-bda8-0dc9a4985fa3"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/e9d8bf08-751b-48cd-ab71-5129801f5b0e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cdf712f0-3a09-428d-bbf1-a0f304a55c21"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/fc2b34df-3841-488e-9b91-f47cea4b524a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/99da3fd2-a306-4888-a618-9ad383842831"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/5876a4ce-3363-49bd-97c8-a7c285ceb579"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9a9ab7b2-c6ee-43c9-b6c4-1922b4336bbb"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/77354584-4696-4b5b-b916-5744e9fd71fb"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/54a12883-66ee-4474-97e0-d3b6da354ade"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/ea4052fb-112c-44a6-946a-6674d3f5f7f4"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/2760901e-f994-47f3-b4ea-e4fb7f23ca29"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/6050ebab-173a-4c41-93f3-76e785b0fae9"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/63b52ed7-3f3c-409a-87df-4c8e92d540db"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/68921b92-1ef9-4f75-9ab8-e2841abb8bcd"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8ad061df-44af-469d-af1a-4025ce7c646b"></head><!--
+
+
+
+
+Oh, hello!  Funny seeing you here.
+
+I appreciate your enthusiasm, but you aren't going to find much down here.
+There certainly aren't clues to any of the puzzles.  The best surprises don't
+even appear in the source until you unlock them for real.
+
+Please be careful with automated requests; I'm not a massive company, and I can
+only take so much traffic.  Please be considerate so that everyone gets to play.
+
+If you're curious about how Advent of Code works, it's running on some custom
+Perl code. Other than a few integrations (auth, analytics, social media), I
+built the whole thing myself, including the design, animations, prose, and all
+of the puzzles.
+
+The puzzles are most of the work; preparing a new calendar and a new set of
+puzzles each year takes all of my free time for 4-5 months. A lot of effort
+went into building this thing - I hope you're enjoying playing it as much as I
+enjoyed making it for you!
+
+If you'd like to hang out, I'm @ericwastl on Twitter.
+
+- Eric Wastl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<body>
+<header><div><h1 class="title-global"><a href="https://adventofcode.com/">Advent of Code</a></h1><nav><ul><li><a href="https://adventofcode.com/2021/about">[About]</a></li><li><a href="https://adventofcode.com/2021/events">[Events]</a></li><li><a href="https://teespring.com/stores/advent-of-code" target="_blank">[Shop]</a></li><li><a href="https://adventofcode.com/2021/settings">[Settings]</a></li><li><a href="https://adventofcode.com/2021/auth/logout">[Log Out]</a></li></ul></nav><div class="user">David Perlman <a href="https://adventofcode.com/2021/support" class="supporter-badge" title="Advent of Code Supporter">(AoC++)</a> <span class="star-count">14*</span></div></div><div><h1 class="title-event">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="title-event-wrap">λy.</span><a href="https://adventofcode.com/2021">2021</a><span class="title-event-wrap"></span></h1><nav><ul><li><a href="https://adventofcode.com/2021">[Calendar]</a></li><li><a href="https://adventofcode.com/2021/support">[AoC++]</a></li><li><a href="https://adventofcode.com/2021/sponsors">[Sponsors]</a></li><li><a href="https://adventofcode.com/2021/leaderboard">[Leaderboard]</a></li><li><a href="https://adventofcode.com/2021/stats">[Stats]</a></li></ul></nav></div></header>
+
+<div id="sidebar">
+<div id="sponsor"><div class="quiet">Our <a href="https://adventofcode.com/2021/sponsors">sponsors</a> help make Advent of Code possible:</div><div class="sponsor"><a href="https://www.rewe-digital.com/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;sidebar&#39;,this.href);" rel="noopener">REWE digital</a> - Java, Kotlin or Scala, we don't like Coding Drama. From Germany to Bulgaria, we're some kind of retail Santa. Give yourself a gift: put us on your list!</div></div>
+</div><!--/sidebar-->
+
+<main>
+<script async="" src="./Day 7 - Advent of Code 2021_files/analytics.js"></script><script>window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});</script>
+<article class="day-desc"><h2>--- Day 7: The Treachery of Whales ---</h2><p>A giant <a href="https://en.wikipedia.org/wiki/Sperm_whale" target="_blank">whale</a> has decided your submarine is its next meal, and it's much faster than you are. There's nowhere to run!</p>
+<p>Suddenly, a swarm of crabs (each in its own tiny submarine - it's too deep for them otherwise) zooms in to rescue you! They seem to be preparing to blast a hole in the ocean floor; sensors indicate a <em>massive underground cave system</em> just beyond where they're aiming!</p>
+<p>The crab submarines all need to be aligned before they'll have enough power to blast a large enough hole for your submarine to get through. However, it doesn't look like they'll be aligned before the whale catches you! Maybe you can help?</p>
+<p>There's one major catch - crab submarines can only move horizontally.</p>
+<p>You quickly make a list of <em>the horizontal position of each crab</em> (your puzzle input). Crab submarines have limited fuel, so you need to find a way to make all of their horizontal positions match while requiring them to spend as little fuel as possible.</p>
+<p>For example, consider the following horizontal positions:</p>
+<pre><code>16,1,2,0,4,2,7,1,2,14</code></pre>
+<p>This means there's a crab with horizontal position <code>16</code>, a crab with horizontal position <code>1</code>, and so on.</p>
+<p>Each change of 1 step in horizontal position of a single crab costs 1 fuel. You could choose any horizontal position to align them all on, but the one that costs the least fuel is horizontal position <code>2</code>:</p>
+<ul>
+<li>Move from <code>16</code> to <code>2</code>: <code>14</code> fuel</li>
+<li>Move from <code>1</code> to <code>2</code>: <code>1</code> fuel</li>
+<li>Move from <code>2</code> to <code>2</code>: <code>0</code> fuel</li>
+<li>Move from <code>0</code> to <code>2</code>: <code>2</code> fuel</li>
+<li>Move from <code>4</code> to <code>2</code>: <code>2</code> fuel</li>
+<li>Move from <code>2</code> to <code>2</code>: <code>0</code> fuel</li>
+<li>Move from <code>7</code> to <code>2</code>: <code>5</code> fuel</li>
+<li>Move from <code>1</code> to <code>2</code>: <code>1</code> fuel</li>
+<li>Move from <code>2</code> to <code>2</code>: <code>0</code> fuel</li>
+<li>Move from <code>14</code> to <code>2</code>: <code>12</code> fuel</li>
+</ul>
+<p>This costs a total of <code><em>37</em></code> fuel. This is the cheapest possible outcome; more expensive outcomes include aligning at position <code>1</code> (<code>41</code> fuel), position <code>3</code> (<code>39</code> fuel), or position <code>10</code> (<code>71</code> fuel).</p>
+<p>Determine the horizontal position that the crabs can align to using the least fuel possible. <em>How much fuel must they spend to align to that position?</em></p>
+</article>
+<p>Your puzzle answer was <code>340056</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>The crabs don't seem interested in your proposed solution. Perhaps you misunderstand crab engineering?</p>
+<p>As it turns out, crab submarine engines <span title="This appears to be due to the modial interaction of magneto-reluctance and capacitive duractance.">don't burn fuel at a constant rate</span>. Instead, each change of 1 step in horizontal position costs 1 more unit of fuel than the last: the first step costs <code>1</code>, the second step costs <code>2</code>, the third step costs <code>3</code>, and so on.</p>
+<p>As each crab moves, moving further becomes more expensive. This changes the best horizontal position to align them all on; in the example above, this becomes <code>5</code>:</p>
+<ul>
+<li>Move from <code>16</code> to <code>5</code>: <code>66</code> fuel</li>
+<li>Move from <code>1</code> to <code>5</code>: <code>10</code> fuel</li>
+<li>Move from <code>2</code> to <code>5</code>: <code>6</code> fuel</li>
+<li>Move from <code>0</code> to <code>5</code>: <code>15</code> fuel</li>
+<li>Move from <code>4</code> to <code>5</code>: <code>1</code> fuel</li>
+<li>Move from <code>2</code> to <code>5</code>: <code>6</code> fuel</li>
+<li>Move from <code>7</code> to <code>5</code>: <code>3</code> fuel</li>
+<li>Move from <code>1</code> to <code>5</code>: <code>10</code> fuel</li>
+<li>Move from <code>2</code> to <code>5</code>: <code>6</code> fuel</li>
+<li>Move from <code>14</code> to <code>5</code>: <code>45</code> fuel</li>
+</ul>
+<p>This costs a total of <code><em>168</em></code> fuel. This is the new cheapest possible outcome; the old alignment position (<code>2</code>) now costs <code>206</code> fuel instead.</p>
+<p>Determine the horizontal position that the crabs can align to using the least fuel possible so they can make you an escape route! <em>How much fuel must they spend to align to that position?</em></p>
+</article>
+<p>Your puzzle answer was <code>96592275</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>At this point, you should <a href="https://adventofcode.com/2021">return to your Advent calendar</a> and try another puzzle.</p>
+<p>If you still want to see it, you can <a href="https://adventofcode.com/2021/day/7/input" target="_blank">get your puzzle input</a>.</p>
+<p>You can also <span class="share">[Share<span class="share-content">on
+  <a href="https://twitter.com/intent/tweet?text=I%27ve+completed+%22The+Treachery+of+Whales%22+%2D+Day+7+%2D+Advent+of+Code+2021&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F7&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+  <a href="javascript:void(0);" onclick="var mastodon_instance=prompt(&#39;Mastodon Instance / Server Name?&#39;); if(typeof mastodon_instance===&#39;string&#39; &amp;&amp; mastodon_instance.length){this.href=&#39;https://&#39;+mastodon_instance+&#39;/share?text=I%27ve+completed+%22The+Treachery+of+Whales%22+%2D+Day+7+%2D+Advent+of+Code+2021+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F7&#39;}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
+</main>
+
+<!-- ga -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69522494-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<!-- /ga -->
+
+</body></html>
