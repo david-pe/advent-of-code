@@ -29,6 +29,13 @@ fn input_as_int_iter(str: &str) -> impl Iterator<Item = i32> + '_ {
         .map(|s: &str| s.parse::<i32>().unwrap())
 }
 
+fn input_as_bigint_iter(str: &str) -> impl Iterator<Item = i64> + '_ {
+    str.trim()
+        .split("\n")
+        .map(|s: &str| s.trim())
+        .map(|s: &str| s.parse::<i64>().unwrap())
+}
+
 fn split_as_int_iter(str: &str) -> impl Iterator<Item = i32> + '_ {
     str.trim()
         .split(",")
