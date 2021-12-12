@@ -1,5 +1,5 @@
 use itertools::Itertools;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 
 #[cfg(test)]
 #[path = "tests.rs"]
@@ -132,7 +132,7 @@ pub fn solve_2(lines: Vec<&str>) -> i32 {
                         .find(|(key, _)| key.eq(&word.chars().collect()))
                         .unwrap()
                 })
-                .map(|(k, v)| v.to_string())
+                .map(|(_, v)| v.to_string())
                 .join("")
                 .parse::<i32>()
                 .unwrap()

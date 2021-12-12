@@ -1,16 +1,10 @@
 use itertools::Itertools;
-use std::borrow::{Borrow, BorrowMut};
-use std::collections::{HashMap, HashSet};
+use std::borrow::BorrowMut;
+use std::collections::HashSet;
 
 #[cfg(test)]
 #[path = "tests.rs"]
 mod tests;
-
-struct Point {
-    id: (i32, i32),
-    is_low_point: bool,
-    neighbors: Vec<(i32, i32)>,
-}
 
 pub fn solve(lines: Vec<&str>) -> usize {
     let rows: Vec<Vec<char>> = lines.iter().map(|line| line.chars().collect()).collect();

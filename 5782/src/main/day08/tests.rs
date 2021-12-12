@@ -1,6 +1,5 @@
 use super::*;
 use crate::assets::Asset;
-use crate::split_as_int_iter;
 
 fn example_data() -> String {
     String::from(
