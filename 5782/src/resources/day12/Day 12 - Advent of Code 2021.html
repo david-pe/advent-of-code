@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://adventofcode.com/2021/day/12#part2 -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Day 12 - Advent of Code 2021</title>
+<!--[if lt IE 9]><script src="/static/html5.js"></script><![endif]-->
+<link href="./Day 12 - Advent of Code 2021_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./Day 12 - Advent of Code 2021_files/style.css">
+<link rel="stylesheet alternate" type="text/css" href="./Day 12 - Advent of Code 2021_files/highcontrast.css" title="High Contrast">
+<link rel="shortcut icon" href="https://adventofcode.com/favicon.png">
+<link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/d82b4cea-4071-4506-93e2-39ef84db8b2f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/1db34d5b-04e3-4762-8743-990fc0ed070c"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/17096a66-f3d8-4bbb-b572-a29c46712732"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/9e17a484-2104-4620-92c0-c1e4399f0cc6"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/57ac9181-abba-4cbf-9bd7-c1eaf24621ef"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c7dc6437-ba2a-4a3f-b4cb-0b778a2756b8"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/50469f0c-8af5-436d-b2f7-513bf574260b"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/5fd16300-5b79-4fd7-928f-f91a14b4e489"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/10e49e39-e45c-4394-b0dd-a41f8ab7cdcd"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/fa5284a4-84c8-40fb-8ff7-d28c79c96f31"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/0ff98ef4-eb82-4ac5-b5dc-7203dea098f1"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/71e28145-cd3e-4d7e-9abf-932700efc0c6"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/af465f7f-9c1a-436b-a73f-52908042765e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/1b810b0d-46bb-4885-8988-cee11186124f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/22ae1786-0599-422e-a05b-b6b101b46c15"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/40ee009b-7759-4f36-a3c3-0087cdf297c2"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c6c07428-2d25-4943-818e-f842a4169120"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/4c5b9fde-6caa-4aed-b5f9-52d9d2634f99"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cc71a83b-7fa5-446c-a0af-31e33de8e2f0"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/c4ca0fb6-deaf-4fd9-84f0-9723701195fc"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/0cc7e0ea-4916-4ad9-aa4f-3e330d3e3025"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/89cb503c-3947-41fc-a95b-cd611632f534"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/55fa2166-defe-46db-b6de-f097d990e9d8"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/84fd04e7-8804-4b21-8a9f-3a6007229ea0"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/340e66d2-a765-4f36-88fb-a5bc8e7c2ed3"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/cde579b5-6c3a-4dea-a21e-042ae2a66d85"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/34a95528-f37b-410d-9490-4364a4cfa12a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8796f645-80d1-41d7-96b7-e808b2fdabfc"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8a5d9033-0a96-4dff-bdfc-fcf4c87e9065"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/7a679d5f-5434-4df6-b7d3-36e9b747b2ba"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/25caf297-0d8a-44c7-9aa3-fe41a9c85144"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/97ddff2f-0bb7-442b-add5-94746e101052"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/4a794856-1670-49f3-8ef4-dcac5e16ce8a"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/395a756d-35e6-4388-9fd9-7a98008d1b2f"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/049df9f6-b10d-43e1-aaa5-134eac6cb8a1"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/1c51e32b-ae92-43e4-bbe5-2e3b3e744793"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/48752e6f-e833-42ac-8cd7-30d42bf4de55"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/8e7c8e2b-f882-47de-a72d-37a494ddd1ad"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/ed6e627f-1f50-43d5-bd72-e6543a7a4425"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/7ad79617-8b73-4be5-a9bd-fb7952ba6f8e"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/152f948e-14d7-4580-b710-6afeb0cb42b3"><link type="text/css" rel="stylesheet" href="blob:https://adventofcode.com/23783f88-3f9a-4642-a34b-e64d726b9168"></head><!--
+
+
+
+
+Oh, hello!  Funny seeing you here.
+
+I appreciate your enthusiasm, but you aren't going to find much down here.
+There certainly aren't clues to any of the puzzles.  The best surprises don't
+even appear in the source until you unlock them for real.
+
+Please be careful with automated requests; I'm not a massive company, and I can
+only take so much traffic.  Please be considerate so that everyone gets to play.
+
+If you're curious about how Advent of Code works, it's running on some custom
+Perl code. Other than a few integrations (auth, analytics, social media), I
+built the whole thing myself, including the design, animations, prose, and all
+of the puzzles.
+
+The puzzles are most of the work; preparing a new calendar and a new set of
+puzzles each year takes all of my free time for 4-5 months. A lot of effort
+went into building this thing - I hope you're enjoying playing it as much as I
+enjoyed making it for you!
+
+If you'd like to hang out, I'm @ericwastl on Twitter.
+
+- Eric Wastl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<body>
+<header><div><h1 class="title-global"><a href="https://adventofcode.com/">Advent of Code</a></h1><nav><ul><li><a href="https://adventofcode.com/2021/about">[About]</a></li><li><a href="https://adventofcode.com/2021/events">[Events]</a></li><li><a href="https://teespring.com/stores/advent-of-code" target="_blank">[Shop]</a></li><li><a href="https://adventofcode.com/2021/settings">[Settings]</a></li><li><a href="https://adventofcode.com/2021/auth/logout">[Log Out]</a></li></ul></nav><div class="user">David Perlman <a href="https://adventofcode.com/2021/support" class="supporter-badge" title="Advent of Code Supporter">(AoC++)</a> <a href="https://www.wix.engineering/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;badge&#39;,this.href);" class="sponsor-badge" title="Member of sponsor: Wix Engineering">(Sponsor)</a> <span class="star-count">24*</span></div></div><div><h1 class="title-event">&nbsp;&nbsp;&nbsp;<span class="title-event-wrap">0x0000|</span><a href="https://adventofcode.com/2021">2021</a><span class="title-event-wrap"></span></h1><nav><ul><li><a href="https://adventofcode.com/2021">[Calendar]</a></li><li><a href="https://adventofcode.com/2021/support">[AoC++]</a></li><li><a href="https://adventofcode.com/2021/sponsors">[Sponsors]</a></li><li><a href="https://adventofcode.com/2021/leaderboard">[Leaderboard]</a></li><li><a href="https://adventofcode.com/2021/stats">[Stats]</a></li></ul></nav></div></header>
+
+<div id="sidebar">
+<div id="sponsor"><div class="quiet">Our <a href="https://adventofcode.com/2021/sponsors">sponsors</a> help make Advent of Code possible:</div><div class="sponsor"><a href="https://retool.com/?utm_source=sponsor&amp;utm_medium=event&amp;utm_campaign=adventofcode" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;sidebar&#39;,this.href);" rel="noopener">Retool</a> - Build internal apps remarkably fast. Drag and drop a form together, and have it POST back to your API in minutes. Write JavaScript anywhere to customize. Deploy instantly with access controls and audit logs.</div></div>
+</div><!--/sidebar-->
+
+<main>
+<script async="" src="./Day 12 - Advent of Code 2021_files/analytics.js"></script><script>window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});</script>
+<article class="day-desc"><h2>--- Day 12: Passage Pathing ---</h2><p>With your <span title="Sublime.">submarine's subterranean subsystems subsisting suboptimally</span>, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just <em>a</em> path - the only way to know if you've found the <em>best</em> path is to find <em>all</em> of them.</p>
+<p>Fortunately, the sensors are still mostly working, and so you build a rough map of the remaining caves (your puzzle input). For example:</p>
+<pre><code>start-A
+start-b
+A-c
+A-b
+b-d
+A-end
+b-end
+</code></pre>
+<p>This is a list of how all of the caves are connected. You start in the cave named <code>start</code>, and your destination is the cave named <code>end</code>. An entry like <code>b-d</code> means that cave <code>b</code> is connected to cave <code>d</code> - that is, you can move between them.</p>
+<p>So, the above cave system looks roughly like this:</p>
+<pre><code>    start
+    /   \
+c--A-----b--d
+    \   /
+     end
+</code></pre>
+<p>Your goal is to find the number of distinct <em>paths</em> that start at <code>start</code>, end at <code>end</code>, and don't visit small caves more than once. There are two types of caves: <em>big</em> caves (written in uppercase, like <code>A</code>) and <em>small</em> caves (written in lowercase, like <code>b</code>). It would be a waste of time to visit any small cave more than once, but big caves are large enough that it might be worth visiting them multiple times. So, all paths you find should <em>visit small caves at most once</em>, and can <em>visit big caves any number of times</em>.</p>
+<p>Given these rules, there are <code><em>10</em></code> paths through this example cave system:</p>
+<pre><code>start,A,b,A,c,A,end
+start,A,b,A,end
+start,A,b,end
+start,A,c,A,b,A,end
+start,A,c,A,b,end
+start,A,c,A,end
+start,A,end
+start,b,A,c,A,end
+start,b,A,end
+start,b,end
+</code></pre>
+<p>(Each line in the above list corresponds to a single path; the caves visited by that path are listed in the order they are visited and separated by commas.)</p>
+<p>Note that in this cave system, cave <code>d</code> is never visited by any path: to do so, cave <code>b</code> would need to be visited twice (once on the way to cave <code>d</code> and a second time when returning from cave <code>d</code>), and since cave <code>b</code> is small, this is not allowed.</p>
+<p>Here is a slightly larger example:</p>
+<pre><code>dc-end
+HN-start
+start-kj
+dc-start
+dc-HN
+LN-dc
+HN-end
+kj-sa
+kj-HN
+kj-dc
+</code></pre>
+<p>The <code>19</code> paths through it are as follows:</p>
+<pre><code>start,HN,dc,HN,end
+start,HN,dc,HN,kj,HN,end
+start,HN,dc,end
+start,HN,dc,kj,HN,end
+start,HN,end
+start,HN,kj,HN,dc,HN,end
+start,HN,kj,HN,dc,end
+start,HN,kj,HN,end
+start,HN,kj,dc,HN,end
+start,HN,kj,dc,end
+start,dc,HN,end
+start,dc,HN,kj,HN,end
+start,dc,end
+start,dc,kj,HN,end
+start,kj,HN,dc,HN,end
+start,kj,HN,dc,end
+start,kj,HN,end
+start,kj,dc,HN,end
+start,kj,dc,end
+</code></pre>
+<p>Finally, this even larger example has <code>226</code> paths through it:</p>
+<pre><code>fs-end
+he-DX
+fs-he
+start-DX
+pj-DX
+end-zg
+zg-sl
+zg-pj
+pj-he
+RW-he
+fs-DX
+pj-RW
+zg-RW
+start-pj
+he-WI
+zg-he
+pj-fs
+start-RW
+</code></pre>
+<p><em>How many paths through this cave system are there that visit small caves at most once?</em></p>
+</article>
+<p>Your puzzle answer was <code>5157</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>After reviewing the available paths, you realize you might have time to visit a single small cave <em>twice</em>. Specifically, big caves can be visited any number of times, a single small cave can be visited at most twice, and the remaining small caves can be visited at most once. However, the caves named <code>start</code> and <code>end</code> can only be visited <em>exactly once each</em>: once you leave the <code>start</code> cave, you may not return to it, and once you reach the <code>end</code> cave, the path must end immediately.</p>
+<p>Now, the <code>36</code> possible paths through the first example above are:</p>
+<pre><code>start,A,b,A,b,A,c,A,end
+start,A,b,A,b,A,end
+start,A,b,A,b,end
+start,A,b,A,c,A,b,A,end
+start,A,b,A,c,A,b,end
+start,A,b,A,c,A,c,A,end
+start,A,b,A,c,A,end
+start,A,b,A,end
+start,A,b,d,b,A,c,A,end
+start,A,b,d,b,A,end
+start,A,b,d,b,end
+start,A,b,end
+start,A,c,A,b,A,b,A,end
+start,A,c,A,b,A,b,end
+start,A,c,A,b,A,c,A,end
+start,A,c,A,b,A,end
+start,A,c,A,b,d,b,A,end
+start,A,c,A,b,d,b,end
+start,A,c,A,b,end
+start,A,c,A,c,A,b,A,end
+start,A,c,A,c,A,b,end
+start,A,c,A,c,A,end
+start,A,c,A,end
+start,A,end
+start,b,A,b,A,c,A,end
+start,b,A,b,A,end
+start,b,A,b,end
+start,b,A,c,A,b,A,end
+start,b,A,c,A,b,end
+start,b,A,c,A,c,A,end
+start,b,A,c,A,end
+start,b,A,end
+start,b,d,b,A,c,A,end
+start,b,d,b,A,end
+start,b,d,b,end
+start,b,end
+</code></pre>
+<p>The slightly larger example above now has <code>103</code> paths through it, and the even larger example now has <code>3509</code> paths through it.</p>
+<p>Given these new rules, <em>how many paths through this cave system are there?</em></p>
+</article>
+<p>Your puzzle answer was <code>144309</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>At this point, you should <a href="https://adventofcode.com/2021">return to your Advent calendar</a> and try another puzzle.</p>
+<p>If you still want to see it, you can <a href="https://adventofcode.com/2021/day/12/input" target="_blank">get your puzzle input</a>.</p>
+<p>You can also <span class="share">[Share<span class="share-content">on
+  <a href="https://twitter.com/intent/tweet?text=I%27ve+completed+%22Passage+Pathing%22+%2D+Day+12+%2D+Advent+of+Code+2021&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F12&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+  <a href="javascript:void(0);" onclick="var mastodon_instance=prompt(&#39;Mastodon Instance / Server Name?&#39;); if(typeof mastodon_instance===&#39;string&#39; &amp;&amp; mastodon_instance.length){this.href=&#39;https://&#39;+mastodon_instance+&#39;/share?text=I%27ve+completed+%22Passage+Pathing%22+%2D+Day+12+%2D+Advent+of+Code+2021+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2021%2Fday%2F12&#39;}else{return false;}" target="_blank">Mastodon</a></span>]</span> this puzzle.</p>
+</main>
+
+<!-- ga -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69522494-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<!-- /ga -->
+
+</body></html>

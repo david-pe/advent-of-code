@@ -1,124 +1,160 @@
-use itertools::Itertools;
 use std::collections::HashMap;
 
 #[cfg(test)]
 #[path = "tests.rs"]
 mod tests;
 
-pub fn solve(lines: Vec<&str>) -> usize {
-    let mut failing_chars: Vec<char> = Vec::new();
-
-    let openers = vec!['(', '[', '{', '<'];
-    let closers = vec![')', ']', '}', '>'];
-    let pairs: HashMap<&char, char> = closers.iter().zip(openers).collect();
-
-    for line in lines {
-        let mut stack: Vec<char> = Vec::new();
-        for char in line.chars() {
-            match char {
-                opener @ ('(' | '[' | '{' | '<') => {
-                    stack.push(opener);
-                }
-                closer @ (')' | ']' | '}' | '>') => {
-                    let expected = pairs.get(&closer).unwrap();
-                    if expected == stack.last().unwrap() {
-                        stack.pop();
-                    } else {
-                        failing_chars.push(closer);
-                        break;
-                    }
-                }
-                _ => continue,
-            };
-        }
-    }
-
-    failing_chars
-        .iter()
-        .map(|c| match c {
-            ')' => 3,
-            ']' => 57,
-            '}' => 1197,
-            '>' => 25137,
-            _ => 0,
-        })
-        .sum()
+struct Octopus {
+    value: i32,
+    did_flash: bool,
 }
 
-pub fn solve_2(lines: Vec<&str>) -> usize {
-    let openers = vec!['(', '[', '{', '<'];
-    let closers = vec![')', ']', '}', '>'];
+pub fn solve(octopuses: Vec<Vec<i32>>) -> usize {
+    let mut state: HashMap<(i32, i32), Octopus> = HashMap::new();
 
-    let openers_1 = vec!['(', '[', '{', '<'];
-    let closers_1 = vec![')', ']', '}', '>'];
-
-    let pairs: HashMap<&char, char> = closers.iter().zip(openers).collect();
-    let reverse_pairs: HashMap<&char, char> = openers_1.iter().zip(closers_1).collect();
-
-    let incomplete_lines = lines.iter().filter(|line| {
-        let mut is_corrupt = false;
-        let mut stack: Vec<char> = Vec::new();
-        for char in line.chars() {
-            match char {
-                opener @ ('(' | '[' | '{' | '<') => {
-                    stack.push(opener);
-                }
-                closer @ (')' | ']' | '}' | '>') => {
-                    let expected = pairs.get(&closer).unwrap();
-                    if expected == stack.last().unwrap() {
-                        stack.pop();
-                    } else {
-                        is_corrupt = true;
-                        break;
-                    }
-                }
-                _ => continue,
-            };
+    for x in 0..10 {
+        for y in 0..10 {
+            state.insert(
+                (x, y),
+                Octopus {
+                    value: octopuses[x as usize][y as usize],
+                    did_flash: false,
+                },
+            );
         }
-        !is_corrupt
-    });
-
-    let mut completions: Vec<Vec<char>> = Vec::new();
-
-    for line in incomplete_lines {
-        let mut stack: Vec<char> = Vec::new();
-        for char in line.chars() {
-            match char {
-                opener @ ('(' | '[' | '{' | '<') => {
-                    stack.push(opener);
-                }
-                ')' | ']' | '}' | '>' => {
-                    stack.pop();
-                }
-                _ => continue,
-            };
-        }
-
-        completions.push(
-            stack
-                .iter()
-                .map(|opener| *reverse_pairs.get(opener).unwrap())
-                .rev()
-                .collect(),
-        );
     }
 
-    let completions_sorted: Vec<usize> = completions
-        .iter()
-        .map(|v| {
-            v.iter().fold(0, |sum, c| {
-                (sum * 5)
-                    + match c {
-                        ')' => 1,
-                        ']' => 2,
-                        '}' => 3,
-                        '>' => 4,
-                        _ => 0,
-                    }
-            })
-        })
-        .sorted_by(|a, b| Ord::cmp(&b, &a))
-        .collect();
+    let mut flash_count_total = 0;
+    for _ in 0..100 {
+        for x in 0..10 {
+            for y in 0..10 {
+                let address = (x, y);
+                state.entry(address).and_modify(|n| n.value += 1);
+            }
+        }
 
-    completions_sorted[(completions_sorted.len() / 2)]
+        loop {
+            let mut flash_count = 0;
+            for x in 0..10 {
+                for y in 0..10 {
+                    let address = (x, y);
+                    let octopus = state.get(&address).unwrap();
+                    if octopus.value > 9 && !octopus.did_flash {
+                        flash_count += 1;
+                        state.entry(address).and_modify(|n| n.did_flash = true);
+                        let neighbor_addresses = neighbor_addresses(address);
+                        for neighbor_address in neighbor_addresses {
+                            state
+                                .entry(neighbor_address)
+                                .and_modify(|neighbor| neighbor.value += 1);
+                        }
+                    }
+                }
+            }
+
+            flash_count_total += flash_count;
+            if flash_count == 0 {
+                for x in 0..10 {
+                    for y in 0..10 {
+                        let address = (x, y);
+                        let octopus = state.get(&address).unwrap();
+                        if octopus.value > 9 {
+                            state.entry(address).and_modify(|n| {
+                                n.value = 0;
+                                n.did_flash = false;
+                            });
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    flash_count_total
+}
+
+pub fn solve_2(octopuses: Vec<Vec<i32>>) -> usize {
+    let mut state: HashMap<(i32, i32), Octopus> = HashMap::new();
+
+    for x in 0..10 {
+        for y in 0..10 {
+            state.insert(
+                (x, y),
+                Octopus {
+                    value: octopuses[x as usize][y as usize],
+                    did_flash: false,
+                },
+            );
+        }
+    }
+
+    let mut steps = 0;
+    'solution: loop {
+        steps += 1;
+        for x in 0..10 {
+            for y in 0..10 {
+                let address = (x, y);
+                state.entry(address).and_modify(|n| n.value += 1);
+            }
+        }
+
+        loop {
+            let mut flash_count = 0;
+            for x in 0..10 {
+                for y in 0..10 {
+                    let address = (x, y);
+                    let octopus = state.get(&address).unwrap();
+                    if octopus.value > 9 && !octopus.did_flash {
+                        flash_count += 1;
+                        state.entry(address).and_modify(|n| n.did_flash = true);
+                        let neighbor_addresses = neighbor_addresses(address);
+                        for neighbor_address in neighbor_addresses {
+                            state
+                                .entry(neighbor_address)
+                                .and_modify(|neighbor| neighbor.value += 1);
+                        }
+                    }
+                }
+            }
+
+            if flash_count == 0 {
+                if state.iter().all(|(_, octopus)| octopus.did_flash) {
+                    break 'solution;
+                }
+                for x in 0..10 {
+                    for y in 0..10 {
+                        let address = (x, y);
+                        let octopus = state.get(&address).unwrap();
+                        if octopus.value > 9 {
+                            state.entry(address).and_modify(|n| {
+                                n.value = 0;
+                                n.did_flash = false;
+                            });
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    steps
+}
+
+fn neighbor_addresses((x, y): (i32, i32)) -> Vec<(i32, i32)> {
+    [
+        (x, y - 1),
+        (x - 1, y - 1),
+        (x - 1, y + 1),
+        (x + 1, y - 1),
+        (x + 1, y + 1),
+        (x - 1, y),
+        (x + 1, y),
+        (x, y + 1),
+    ]
+    .iter()
+    .filter(|(x, y)| x >= &0 && y >= &0 && x < &10 && y < &10)
+    .map(|n| *n)
+    .collect()
 }
